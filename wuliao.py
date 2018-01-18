@@ -15,9 +15,6 @@ def add():
     return jsonify({'result': a + b})
 
 
-from test import lantu
-app.register_blueprint(lantu, url_prefix='')
-
 if __name__ == "__main__":
     print(app.url_map)
     app.run(debug=True)
