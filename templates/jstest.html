@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>两数字相加</title>
+        <script  src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+        <script type=text/javascript>
+        $(function(){
+                $('#calculate').click(function(){
+                    var a = $('#a').val();
+                    var b = $('#b').val();
+                    content = {'a':a,'b':b};
+                    $.get('/addnumber', content, function(data){
+                        $("#result").html(data.result)
+                    });
+                });
+            });
+
+  </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h3 class="text-muted">addNum</h3>
+      </div>
+      <hr/>
+      <div>
+      <p>
+    <input type="text" id='a' size="5" name="a"> +
+    <input type="text" id='b' size="5" name="b"> =
+    <span id="result">?</span>
+    <p><button class="btn btn-success" id="calculate">calculate</button></p>
+      </form>
+      </div>
+    </div>
+  </body>
+</html>
